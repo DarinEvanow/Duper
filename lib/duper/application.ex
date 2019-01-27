@@ -9,8 +9,9 @@ defmodule Duper.Application do
 
     children = [
       Duper.Results,
-      { Duper.PathFinder, "." },
+      { Duper.PathFinder, "/Users/TheLibrary/Documents" },
       Duper.WorkerSupervisor,
+      { Duper.Gatherer, 1 }
     ]
 
     opts = [strategy: :one_for_all, name: Duper.Supervisor]
